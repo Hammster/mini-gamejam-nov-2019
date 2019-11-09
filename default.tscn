@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://floor.png" type="Texture" id=1]
@@ -28,17 +29,33 @@ margin_right = 967.434
 margin_bottom = 41.5083
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+=======
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://bigger_text.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Right Hand.gd" type="Script" id=2]
+[ext_resource path="res://assets/hand.png" type="Texture" id=3]
+[ext_resource path="res://Left Hand.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CountText" type="Label" parent="."]
+margin_left = 827.495
+margin_right = 959.495
+margin_bottom = 26.0
+custom_fonts/font = ExtResource( 1 )
+>>>>>>> d8d69774f7f811366b7bcdc959efaf03f907b2ff
 text = "baby count:"
 
-[node name="CountValue" type="Label" parent="Node"]
-margin_left = 975.614
-margin_top = 15.5688
-margin_right = 1027.61
-margin_bottom = 70.5688
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
+[node name="CountValue" type="Label" parent="."]
+margin_left = 973.03
+margin_top = 1.35293
+margin_right = 1025.03
+margin_bottom = 56.3529
+custom_fonts/font = ExtResource( 1 )
 text = "99
 "
+<<<<<<< HEAD
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -93,3 +110,30 @@ offset = Vector2( 1.94812, -5.84406 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
 position = Vector2( -702.141, -16.2399 )
 shape = SubResource( 1 )
+=======
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Bone2D" type="Bone2D" parent="."]
+
+[node name="Right Hand" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Right Hand"]
+position = Vector2( 754.478, 386.513 )
+texture = ExtResource( 3 )
+offset = Vector2( 1, 0 )
+hframes = 2
+frame = 1
+
+[node name="Left Hand" type="KinematicBody2D" parent="."]
+scale = Vector2( -1, 1 )
+script = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Left Hand"]
+position = Vector2( -335.979, 376.975 )
+texture = ExtResource( 3 )
+offset = Vector2( 1, 0 )
+hframes = 2
+frame = 1
+>>>>>>> d8d69774f7f811366b7bcdc959efaf03f907b2ff
