@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://bigger_text.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/hand.png" type="Texture" id=2]
+[ext_resource path="res://Right Hand.gd" type="Script" id=2]
+[ext_resource path="res://assets/hand.png" type="Texture" id=3]
+[ext_resource path="res://Left Hand.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "pinch"
@@ -58,10 +60,11 @@ text = "99
 [node name="Bone2D" type="Bone2D" parent="."]
 
 [node name="Right Hand" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Right Hand"]
 position = Vector2( 312.231, 152.242 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
 
@@ -70,10 +73,11 @@ anims/pinch = SubResource( 1 )
 
 [node name="Left Hand" type="KinematicBody2D" parent="."]
 scale = Vector2( -1, 1 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Left Hand"]
 position = Vector2( -49.1158, 135.532 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
 
