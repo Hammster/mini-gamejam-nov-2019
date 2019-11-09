@@ -36,3 +36,7 @@ func _process(delta):
 	get_input()
 	$CollisionShape2D.disabled = !pinching
 	pass
+
+
+func _on_Test_area_entered(area):
+	pass # Replace with function body.

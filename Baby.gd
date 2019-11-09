@@ -3,6 +3,7 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var done = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,8 +11,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	var children = get_children()
+	for child in children:
+		var count = 0
+		if child.$Sprite.frame == 1:
+			count++
+	if count == 3:
+		done = true
 	pass
-
-func _on_Test_area_entered(area):
-	$Sprite.frame = 1
-	pass # Replace with function body.

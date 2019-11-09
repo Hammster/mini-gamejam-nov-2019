@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://bigger_text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/scripts/Right Hand.gd" type="Script" id=2]
 [ext_resource path="res://assets/hand.png" type="Texture" id=3]
 [ext_resource path="res://assets/scripts/Left Hand.gd" type="Script" id=4]
-[ext_resource path="res://Test.gd" type="Script" id=5]
+[ext_resource path="res://Baby.gd" type="Script" id=5]
 [ext_resource path="res://assets/testsprite.png" type="Texture" id=6]
+[ext_resource path="res://Test.gd" type="Script" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 15.4952
@@ -40,13 +41,13 @@ position = Vector2( 137.708, -5.9873 )
 [node name="Right Hand" type="Area2D" parent="."]
 position = Vector2( 600.494, 356.181 )
 script = ExtResource( 2 )
+speed = 10
 
 [node name="Sprite" type="Sprite" parent="Right Hand"]
 position = Vector2( 47.2589, -15.9586 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
 position = Vector2( 0.160339, 0.712585 )
@@ -56,27 +57,69 @@ shape = SubResource( 1 )
 position = Vector2( 299.113, 322.321 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
+speed = 10
 
 [node name="Sprite" type="Sprite" parent="Left Hand"]
 position = Vector2( 45.6485, -17.5452 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Hand"]
 position = Vector2( -0.246307, -0.0671692 )
 shape = SubResource( 2 )
 
-[node name="Test" type="Area2D" parent="."]
-position = Vector2( 515.713, 256.567 )
+[node name="Baby" type="Area2D" parent="."]
+position = Vector2( -1.28586, 1.28584 )
 script = ExtResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="Test"]
+[node name="Sprite" type="Sprite" parent="Baby"]
+position = Vector2( 467.407, 167.161 )
+scale = Vector2( 2.83877, 2.9545 )
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="Dot" type="Area2D" parent="Baby"]
+position = Vector2( 515.713, 256.567 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Baby/Dot"]
 position = Vector2( -1.56091, -0.968933 )
 texture = ExtResource( 6 )
 hframes = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Baby/Dot"]
 position = Vector2( -0.616089, -0.968933 )
 shape = SubResource( 3 )
+
+[node name="Dot2" type="Area2D" parent="Baby"]
+position = Vector2( 689.303, 190.988 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Baby/Dot2"]
+position = Vector2( -1.56091, -0.968933 )
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Baby/Dot2"]
+position = Vector2( -0.616089, -0.968933 )
+shape = SubResource( 3 )
+
+[node name="Dot3" type="Area2D" parent="Baby"]
+position = Vector2( 293.26, 117.695 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Baby/Dot3"]
+position = Vector2( 38.3005, 98.0417 )
+texture = ExtResource( 6 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Baby/Dot3"]
+position = Vector2( 37.9595, 99.3276 )
+shape = SubResource( 3 )
+[connection signal="area_entered" from="Baby/Dot" to="Baby/Dot" method="_on_Test_area_entered"]
+[connection signal="area_exited" from="Baby/Dot" to="Baby/Dot" method="_on_Test_area_exited"]
+[connection signal="area_entered" from="Baby/Dot2" to="Baby/Dot2" method="_on_Test_area_entered"]
+[connection signal="area_exited" from="Baby/Dot2" to="Baby/Dot2" method="_on_Test_area_exited"]
+[connection signal="area_entered" from="Baby/Dot3" to="Baby/Dot3" method="_on_Test_area_entered"]
+[connection signal="area_exited" from="Baby/Dot3" to="Baby/Dot3" method="_on_Test_area_exited"]
