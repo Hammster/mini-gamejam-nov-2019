@@ -60,7 +60,9 @@ text = "99
 [node name="Right Hand" type="KinematicBody2D" parent="."]
 
 [node name="Sprite" type="Sprite" parent="Right Hand"]
+position = Vector2( 312.231, 152.242 )
 texture = ExtResource( 2 )
+offset = Vector2( 1, 0 )
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Right Hand"]
@@ -70,7 +72,9 @@ anims/pinch = SubResource( 1 )
 scale = Vector2( -1, 1 )
 
 [node name="Sprite" type="Sprite" parent="Left Hand"]
+position = Vector2( -49.1158, 135.532 )
 texture = ExtResource( 2 )
+offset = Vector2( 1, 0 )
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Left Hand"]
