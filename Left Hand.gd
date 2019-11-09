@@ -12,6 +12,12 @@ func _ready():
 
 # Processes input for this hand
 func get_input():
+	#pinching
+	if Input.is_action_pressed("pinch_left_hand"):
+		$Sprite.frame = 1
+	if Input.is_action_just_released("pinch_left_hand"):
+		$Sprite.frame = 0
+	#movement
 	velocity = Vector2()
 	if Input.is_action_pressed("left_hand_right"):
 		velocity.x += 1

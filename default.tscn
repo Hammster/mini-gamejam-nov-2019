@@ -1,41 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://bigger_text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Right Hand.gd" type="Script" id=2]
 [ext_resource path="res://assets/hand.png" type="Texture" id=3]
 [ext_resource path="res://Left Hand.gd" type="Script" id=4]
-
-[sub_resource type="Animation" id=1]
-resource_name = "pinch"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
-
-[sub_resource type="Animation" id=2]
-resource_name = "pinch"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
 
 [node name="Node2D" type="Node2D"]
 
@@ -63,23 +31,19 @@ text = "99
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Right Hand"]
-position = Vector2( 312.231, 152.242 )
+position = Vector2( 754.478, 386.513 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Right Hand"]
-anims/pinch = SubResource( 1 )
+frame = 1
 
 [node name="Left Hand" type="KinematicBody2D" parent="."]
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="Left Hand"]
-position = Vector2( -49.1158, 135.532 )
+position = Vector2( -335.979, 376.975 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Left Hand"]
-anims/pinch = SubResource( 2 )
+frame = 1
