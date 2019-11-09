@@ -35,4 +35,5 @@ func get_input():
 func _process(delta):
 	get_input()
 	velocity = move_and_slide(velocity)
+	$CollisionShape2D.disabled = !pinching
 	pass
