@@ -37,7 +37,7 @@ text = "99
 [node name="Bone2D" type="Bone2D" parent="."]
 position = Vector2( 137.708, -5.9873 )
 
-[node name="Right Hand" type="KinematicBody2D" parent="."]
+[node name="Right Hand" type="Area2D" parent="."]
 position = Vector2( 600.494, 356.181 )
 script = ExtResource( 2 )
 
@@ -51,7 +51,7 @@ hframes = 2
 position = Vector2( 0.160339, 0.712585 )
 shape = SubResource( 1 )
 
-[node name="Left Hand" type="KinematicBody2D" parent="."]
+[node name="Left Hand" type="Area2D" parent="."]
 position = Vector2( 299.113, 322.321 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
@@ -66,9 +66,8 @@ hframes = 2
 position = Vector2( -0.246307, -0.0671692 )
 shape = SubResource( 2 )
 
-[node name="Test" type="KinematicBody2D" parent="."]
+[node name="Test" type="Area2D" parent="."]
 position = Vector2( 515.713, 256.567 )
-input_pickable = true
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Test"]
