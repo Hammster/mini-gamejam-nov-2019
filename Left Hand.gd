@@ -14,10 +14,10 @@ func _ready():
 # Processes input for this hand
 func get_input():
 	#pinching
-	if Input.is_action_pressed("pinch_right_hand"):
+	if Input.is_action_pressed("pinch_left_hand"):
 		$Sprite.frame = 1
 		pinching = true
-	if Input.is_action_just_released("pinch_right_hand"):
+	if Input.is_action_just_released("pinch_left_hand"):
 		$Sprite.frame = 0
 		pinching = false
 	#movement
