@@ -46,7 +46,6 @@ position = Vector2( 47.2589, -15.9586 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
 position = Vector2( 0.160339, 0.712585 )
@@ -62,7 +61,6 @@ position = Vector2( 45.6485, -17.5452 )
 texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Hand"]
 position = Vector2( -0.246307, -0.0671692 )
