@@ -4,6 +4,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 export (int) var speed = 200
+var pinching = false
 var velocity = Vector2()
 
 # Called when the node enters the scene tree for the first time.
@@ -13,10 +14,12 @@ func _ready():
 # Processes input for this hand
 func get_input():
 	#pinching
-	if Input.is_action_pressed("pinch_left_hand"):
+	if Input.is_action_pressed("pinch_right_hand"):
 		$Sprite.frame = 1
-	if Input.is_action_just_released("pinch_left_hand"):
+		pinching = true
+	if Input.is_action_just_released("pinch_right_hand"):
 		$Sprite.frame = 0
+		pinching = false
 	#movement
 	velocity = Vector2()
 	if Input.is_action_pressed("left_hand_right"):
