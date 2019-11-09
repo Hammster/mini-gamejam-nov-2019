@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/scripts/BabyDestroyer.gd" type="Script" id=4]
 [ext_resource path="res://bigger_text.tres" type="DynamicFont" id=5]
 [ext_resource path="res://BabyController.gd" type="Script" id=6]
-[ext_resource path="res://baby.png" type="Texture" id=7]
+[ext_resource path="res://assets/baby-sheet.png" type="Texture" id=7]
 [ext_resource path="res://assets/scripts/Right Hand.gd" type="Script" id=8]
 [ext_resource path="res://assets/hand.png" type="Texture" id=9]
 [ext_resource path="res://assets/scripts/Left Hand.gd" type="Script" id=10]
@@ -91,6 +91,7 @@ script = ExtResource( 6 )
 
 [node name="baby" type="Sprite" parent="Baby"]
 texture = ExtResource( 7 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baby"]
 shape = SubResource( 2 )
@@ -130,6 +131,7 @@ shape = SubResource( 5 )
 [node name="Baby2" type="Node2D" parent="."]
 position = Vector2( 20, 290 )
 script = ExtResource( 11 )
+babySpritePath = NodePath("../Baby/baby")
 
 [node name="Sprite" type="Sprite" parent="Baby2"]
 position = Vector2( 481.286, 128.714 )
