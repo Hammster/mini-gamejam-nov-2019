@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://bigger_text.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Right Hand.gd" type="Script" id=2]
 [ext_resource path="res://assets/hand.png" type="Texture" id=3]
 [ext_resource path="res://Left Hand.gd" type="Script" id=4]
+[ext_resource path="res://testsprite.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,8 +23,6 @@ margin_bottom = 56.3529
 custom_fonts/font = ExtResource( 1 )
 text = "99
 "
-
-[node name="Sprite" type="Sprite" parent="."]
 
 [node name="Bone2D" type="Bone2D" parent="."]
 
@@ -47,3 +46,10 @@ texture = ExtResource( 3 )
 offset = Vector2( 1, 0 )
 hframes = 2
 frame = 1
+
+[node name="Test" type="KinematicBody2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Test"]
+position = Vector2( 396.827, 258.177 )
+texture = ExtResource( 5 )
+hframes = 2
