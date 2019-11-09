@@ -7,6 +7,7 @@ var storedPos = 0
 
 func _ready():
 	storedPos = self.offset.x
+	storedSpeed = speed
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -37,6 +37,7 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2000, 150 )
 script = ExtResource( 2 )
+speed = 10
 
 [node name="UpperBelt" type="Sprite" parent="."]
 position = Vector2( 511.851, 175 )
@@ -44,7 +45,7 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 2000, 150 )
 script = ExtResource( 2 )
-speed = -1
+speed = -10
 
 [node name="BabyStopper" type="Area2D" parent="."]
 position = Vector2( 365.619, 152.566 )
