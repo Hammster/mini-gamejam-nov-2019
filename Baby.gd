@@ -1,8 +1,6 @@
-extends Area2D
+extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var steps_done = 0
 var done = false
 
 # Called when the node enters the scene tree for the first time.
@@ -11,11 +9,26 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var children = get_children()
-	for child in children:
-		var count = 0
-		if child.$Sprite.frame == 1:
-			count++
-	if count == 3:
+	if steps_done == 3:
 		done = true
+		print("done")
 	pass
+
+func hide():
+	self.visible = false
+	pass
+
+func reset():
+	steps_done = 0
+	$Dot/Sprite.frame = 0
+	$Dot2/Sprite.frame = 0
+	$Dot3/Sprite.frame = 0
+	done = false
+
+func show():
+	self.visible = true
+	pass
+
+func _on_Dot_step_done():
+	steps_done += 1
+	pass # Replace with function body.

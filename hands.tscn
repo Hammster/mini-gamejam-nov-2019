@@ -8,10 +8,10 @@
 [ext_resource path="res://assets/testsprite.png" type="Texture" id=6]
 [ext_resource path="res://Test.gd" type="Script" id=7]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 radius = 15.4952
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=5]
 radius = 15.5617
 
 [sub_resource type="CircleShape2D" id=3]
@@ -35,10 +35,8 @@ custom_fonts/font = ExtResource( 1 )
 text = "99
 "
 
-[node name="Bone2D" type="Bone2D" parent="."]
-position = Vector2( 137.708, -5.9873 )
-
 [node name="Right Hand" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 600.494, 356.181 )
 script = ExtResource( 2 )
 speed = 10
@@ -51,9 +49,10 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
 position = Vector2( 0.160339, 0.712585 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
 [node name="Left Hand" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 299.113, 322.321 )
 scale = Vector2( -1, 1 )
 script = ExtResource( 4 )
@@ -67,9 +66,10 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Hand"]
 position = Vector2( -0.246307, -0.0671692 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
-[node name="Baby" type="Area2D" parent="."]
+[node name="Baby" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( -1.28586, 1.28584 )
 script = ExtResource( 5 )
 
@@ -119,7 +119,10 @@ position = Vector2( 37.9595, 99.3276 )
 shape = SubResource( 3 )
 [connection signal="area_entered" from="Baby/Dot" to="Baby/Dot" method="_on_Test_area_entered"]
 [connection signal="area_exited" from="Baby/Dot" to="Baby/Dot" method="_on_Test_area_exited"]
+[connection signal="step_done" from="Baby/Dot" to="Baby" method="_on_Dot_step_done"]
 [connection signal="area_entered" from="Baby/Dot2" to="Baby/Dot2" method="_on_Test_area_entered"]
 [connection signal="area_exited" from="Baby/Dot2" to="Baby/Dot2" method="_on_Test_area_exited"]
+[connection signal="step_done" from="Baby/Dot2" to="Baby" method="_on_Dot_step_done"]
 [connection signal="area_entered" from="Baby/Dot3" to="Baby/Dot3" method="_on_Test_area_entered"]
 [connection signal="area_exited" from="Baby/Dot3" to="Baby/Dot3" method="_on_Test_area_exited"]
+[connection signal="step_done" from="Baby/Dot3" to="Baby" method="_on_Dot_step_done"]
