@@ -59,7 +59,7 @@ position = Vector2( 20.3826, 19.7355 )
 shape = SubResource( 1 )
 
 [node name="Timer" type="Timer" parent="BabyStopper"]
-wait_time = 4.8
+wait_time = 4.0
 
 [node name="BabyDestroyer" type="Area2D" parent="."]
 position = Vector2( -183.49, 155.739 )
