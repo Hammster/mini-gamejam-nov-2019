@@ -20,13 +20,13 @@ extents = Vector2( 20.8244, 19.4998 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 100, 80 )
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=3]
 radius = 15.4952
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=4]
 radius = 15.5617
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=5]
 radius = 40.0974
 
 [node name="Node2D" type="Node2D"]
@@ -111,7 +111,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Right Hand"]
 position = Vector2( 0.160339, 0.712585 )
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="Left Hand" type="Area2D" parent="."]
 position = Vector2( 190, 480.988 )
@@ -127,7 +127,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Left Hand"]
 position = Vector2( -0.246307, -0.0671692 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Baby2" type="Node2D" parent="."]
 position = Vector2( 20, 290 )
@@ -152,7 +152,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baby2/Dot"]
 position = Vector2( -0.616089, -0.968933 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Dot2" type="Area2D" parent="Baby2"]
 editor/display_folded = true
@@ -166,7 +166,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baby2/Dot2"]
 position = Vector2( -0.616089, -0.968933 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Dot3" type="Area2D" parent="Baby2"]
 position = Vector2( 293.26, 117.695 )
@@ -179,7 +179,7 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Baby2/Dot3"]
 position = Vector2( 37.9595, 99.3276 )
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 [connection signal="area_entered" from="BabyStopper" to="BabyStopper" method="_on_BabyStopper_area_entered"]
 [connection signal="timeout" from="BabyStopper/Timer" to="BabyStopper" method="_on_Timer_timeout"]
 [connection signal="area_entered" from="BabyDestroyer" to="BabyDestroyer" method="_on_BabyDestroyer_area_entered"]
